@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# mr.robot.sh - Nosso Décimo Programa em Shell - Mr. Robot
+# mr.robot.sh - Nosso robô em Shell - Mr. Robot
 # Homepage: http://utah.com.br
 # Autor: Adilson Fausto Silva
 # Mantenedor: Grupo Utah
@@ -46,6 +46,12 @@ while true; do
 		*"conect"*|*"acesse"*|*"ssh"*)
 			DADO="$(( $RANDOM % 4))"
 			ssh -l root "${openssh[$DADO]}"
+		;;
+		
+		*"update"*|*"atualize"*|*"atualizar"*)
+			apt update
+			apt upgrade -y
+		;;
 	
 	esac
 
